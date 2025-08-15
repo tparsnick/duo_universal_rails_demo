@@ -37,19 +37,19 @@ ID_VALID -- No --> LOGIN_FAIL
 ```
 [mermaid flow editor](https://mermaid.live/)
 
-- 1. Health Check  
+1. Health Check  
 Your application sends a health check to Duo’s service to verify connectivity.
 
-- 2. Authorization Request (OAuth/OIDC)  
+2. Authorization Request (OAuth/OIDC)  
 The application constructs a JWT containing a `redirect_uri` and sends an authorization request to Duo’s authorization endpoint.
 
-- 3. Duo Universal Prompt (Hosted by Duo)  
+3. Duo Universal Prompt (Hosted by Duo)  
 Duo presents the two-factor authentication prompt on its hosted UI (push, passkeys, etc.).
 
-- 4. Successful 2FA → Redirect  
+4. Successful 2FA → Redirect  
 Upon successful verification, Duo redirects the user’s browser back to the provided `redirect_uri`.
 
-- 5. Retrieve Authentication Result (Token Exchange)  
+5. Retrieve Authentication Result (Token Exchange)  
 Your application exchanges the authorization code at Duo’s Access Token endpoint to retrieve the authentication result, including contextual information about the 2FA event.
 
 
@@ -64,21 +64,24 @@ Your application exchanges the authorization code at Duo’s Access Token endpoi
 
 ### 1. Install dependencies
 
-Make sure you have  the latest gem system  and [Bundler](https://bundler.io/) installed:
+Make sure you have the latest gem system and [Bundler](https://bundler.io/) installed:
 
 ```bash
 gem update --system
 gem install bundler
 bundle install
 ```
+### 3. Update config/duo.yml 
 
-### 2. run puma and rails
+Add your settings to connect to the Duo Web SDK. These can be retrieved from the duo admin interface
+
+### 4. run puma and rails
 ```
 bin/rails server
 ```
 check the browser at https://localhost/
 
-### 3. Debug the rails app with the console
+### 5. Debug the rails app with the console
 ```
 bin/rails console
 ```

@@ -11,9 +11,12 @@
 # http://github.com/RailsApps/rails-composer/issues
 #----------------------------------------------------------------------------
 
-# Ignore all RubyGem files
+# RubyGem binary files
 *.gem
 /pkg/
+
+# duo config
+config/duo.yml 
 
 # bundler state
 /.bundle
