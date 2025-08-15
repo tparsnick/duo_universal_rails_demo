@@ -4,8 +4,6 @@ ruby file: ".ruby-version"
 
 gem 'rails', '~> 7.1'
 gem 'jwt', ">= 2.2.2"
-
-# For running Sinatra with Puma instead of WEBrick
 gem 'puma'
 gem 'duo_universal_ruby', '~>0.1.1'
 
