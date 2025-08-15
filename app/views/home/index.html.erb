@@ -1,0 +1,10 @@
+<h2>Welcome, <%= session[:username] %>!</h2>
+<p>You are now in the protected area</p>
+<%= link_to "Logout", logout_path %>
+<% if session[:duo_authenticated] %>
+  <p>Duo authentication successful.</p>
+  <pre><%= @token_info %></pre>
+<% elsif duo_skip? %>
+  <p>Duo skipped due to OPEN failmode.</p>
+<% end %>
+

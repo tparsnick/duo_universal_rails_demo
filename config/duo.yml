@@ -1,0 +1,10 @@
+# Replace the first three values with the ones from your Duo Web SDK app.
+# The rest of the values are up to you.
+client_id: "XXXXXXXXXXXXXXXXXXXX"
+client_secret: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+api_host: "api-xxxxxxxx.duosecurity.com"
+redirect_uri: "https://localhost/duo-callback"
+failmode: "OPEN"    # ["OPEN", "CLOSED"]. "OPEN" means that 2FA can be bypassed.
+# duo_certs: "DISABLE" # ["DISABLE, nil]. "DISABLE" means do not use certs.
+# http_proxy: "localhost:8081"
+
